@@ -1,0 +1,187 @@
+body {
+  font-family: Mulish, Arial, sans-serif;
+  color: #9a9998;
+  background-color: #222020;
+}
+.border-bottom {
+  border-color: rgba(199, 209, 219, 0.1) !important;
+}
+.LessonKey {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #000;
+  outline: 1px solid transparent;
+  font-family: Ubuntu Mono, Lucida Console, monospace;
+  font-size: 0.9rem;
+  line-height: calc(1.5rem - 2px);
+  text-align: center;
+  cursor: default;
+  background-color: initial;
+  outline: 1px solid transparent;
+  text-transform: uppercase;
+}
+.LessonKey + .LessonKey {
+  margin-left: 1px;
+}
+.LessonKey--boosted {
+  color: #000;
+  outline: 1px solid #fff;
+}
+.LessonKey-Accuracy--2 {
+  color: #aaa;
+  background-color: #2f2b2b;
+  outline: 1px solid transparent;
+}
+.LessonKey-Accuracy--1 {
+  color: #000;
+  background-color: #ddd;
+  outline: 1px solid transparent;
+}
+.LessonKey-Accuracy-80,
+.LessonKey-Accuracy-81,
+.LessonKey-Accuracy-82,
+.LessonKey-Accuracy-83,
+.LessonKey-Accuracy-84,
+.LessonKey-Accuracy-85,
+.LessonKey-Accuracy-86,
+.LessonKey-Accuracy-87,
+.LessonKey-Accuracy-88,
+.LessonKey-Accuracy-89,
+.LessonKey-Accuracy-90,
+.LessonKey-Accuracy-91,
+.LessonKey-Accuracy-92,
+.LessonKey-Accuracy-93,
+.LessonKey-Accuracy-94,
+.LessonKey-Accuracy-95,
+.LessonKey-Accuracy-96,
+.LessonKey-Accuracy-97,
+.LessonKey-Accuracy-98,
+.LessonKey-Accuracy-99,
+.LessonKey-Accuracy-100 {
+  background-color: rgb(14, 218, 97);
+}
+.LessonKey-Accuracy-60,
+.LessonKey-Accuracy-61,
+.LessonKey-Accuracy-62,
+.LessonKey-Accuracy-63,
+.LessonKey-Accuracy-64,
+.LessonKey-Accuracy-65,
+.LessonKey-Accuracy-66,
+.LessonKey-Accuracy-67,
+.LessonKey-Accuracy-68,
+.LessonKey-Accuracy-69,
+.LessonKey-Accuracy-70,
+.LessonKey-Accuracy-71,
+.LessonKey-Accuracy-72,
+.LessonKey-Accuracy-73,
+.LessonKey-Accuracy-74,
+.LessonKey-Accuracy-75,
+.LessonKey-Accuracy-76,
+.LessonKey-Accuracy-77,
+.LessonKey-Accuracy-78,
+.LessonKey-Accuracy-79 {
+  background-color: rgb(68, 157, 70);
+}
+.LessonKey-Accuracy-50,
+.LessonKey-Accuracy-51,
+.LessonKey-Accuracy-52,
+.LessonKey-Accuracy-53,
+.LessonKey-Accuracy-54,
+.LessonKey-Accuracy-55,
+.LessonKey-Accuracy-56,
+.LessonKey-Accuracy-57,
+.LessonKey-Accuracy-58,
+.LessonKey-Accuracy-59 {
+  background-color: rgb(95, 126, 56);
+}
+.LessonKey-Accuracy-40,
+.LessonKey-Accuracy-41,
+.LessonKey-Accuracy-42,
+.LessonKey-Accuracy-43,
+.LessonKey-Accuracy-44,
+.LessonKey-Accuracy-45,
+.LessonKey-Accuracy-46,
+.LessonKey-Accuracy-47,
+.LessonKey-Accuracy-48,
+.LessonKey-Accuracy-49 {
+  background-color: rgb(122, 95, 42);
+}
+.LessonKey-Accuracy-20,
+.LessonKey-Accuracy-21,
+.LessonKey-Accuracy-22,
+.LessonKey-Accuracy-23,
+.LessonKey-Accuracy-24,
+.LessonKey-Accuracy-25,
+.LessonKey-Accuracy-26,
+.LessonKey-Accuracy-27,
+.LessonKey-Accuracy-28,
+.LessonKey-Accuracy-29,
+.LessonKey-Accuracy-30,
+.LessonKey-Accuracy-31,
+.LessonKey-Accuracy-32,
+.LessonKey-Accuracy-33,
+.LessonKey-Accuracy-34,
+.LessonKey-Accuracy-35,
+.LessonKey-Accuracy-36,
+.LessonKey-Accuracy-37,
+.LessonKey-Accuracy-38,
+.LessonKey-Accuracy-39 {
+  background-color: rgb(152, 60, 26);
+}
+.LessonKey-Accuracy-0,
+.LessonKey-Accuracy-1,
+.LessonKey-Accuracy-2,
+.LessonKey-Accuracy-3,
+.LessonKey-Accuracy-4,
+.LessonKey-Accuracy-5,
+.LessonKey-Accuracy-6,
+.LessonKey-Accuracy-7,
+.LessonKey-Accuracy-8,
+.LessonKey-Accuracy-9,
+.LessonKey-Accuracy-10,
+.LessonKey-Accuracy-11,
+.LessonKey-Accuracy-12,
+.LessonKey-Accuracy-13,
+.LessonKey-Accuracy-14,
+.LessonKey-Accuracy-15,
+.LessonKey-Accuracy-16,
+.LessonKey-Accuracy-17,
+.LessonKey-Accuracy-18,
+.LessonKey-Accuracy-19 {
+  background-color: rgb(204, 0, 0);
+}
+.TextInput-fragment {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0;
+  color: #9a9998;
+  font-family: Ubuntu Mono, Lucida Console, monospace;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  white-space: pre-wrap;
+  word-spacing: normal;
+  word-wrap: break-word;
+}
+.TextInput-item--special {
+  color: hsla(30, 1%, 60%, 0.3);
+}
+.TextInput-item--cursor {
+  animation: blink-animation 1s step-end;
+  animation-iteration-count: infinite;
+}
+@keyframes blink-animation {
+  0% {
+    color: #000;
+    background-color: #fff;
+  }
+  50% {
+    color: #9a9998;
+    background-color: initial;
+  }
+}

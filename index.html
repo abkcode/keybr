@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Practice! Practice! Practice!</title>
+    <link rel="stylesheet" href="assets/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <section class="section" id="app">
+      <div class="container">
+        <div class="Practice-indicators mt-5">
+          <div class="IndicatorRow IndicatorRow-gauges border-bottom mb-1">
+            <span class="IndicatorRow-gauge Practice-speed mr-4" title="Typing speed in the last lesson."
+              ><span class="Name">Speed:</span>
+              <span class="IndicatorRow-gaugeValue"
+                ><span class="Value">{{ stats.speed.toFixed(2) }}</span> (<span
+                  v-bind:class="stats.speedChange < 0 ? 'text-danger' : 'text-success'"
+                  title="Difference from the average value. Positive values are better."
+                  >{{ (stats.speedChange < 0) ? '↓' + stats.speedChange.toFixed(2) : '↑+' + stats.speedChange.toFixed(2) }}</span
+                >)</span
+              ></span
+            ><span class="IndicatorRow-gauge Practice-errors mr-4" title="Difference from the average value. Negative values are better."
+              ><span class="Name">Errors:</span>
+              <span class="IndicatorRow-gaugeValue"
+                ><span class="Value">{{ stats.errors.toFixed(2) }}</span> (<span
+                  v-bind:class="stats.errorsChange > 0 ? 'text-danger' : 'text-success'"
+                  title="Difference from the average value. Negative values are better."
+                  >{{ (stats.errorsChange < 0) ? '↓' + stats.errorsChange.toFixed(2) : '↑+' + stats.errorsChange.toFixed(2) }}</span
+                >)</span
+              ></span
+            ><span
+              class="IndicatorRow-gauge Practice-score"
+              title="Score of the last lesson in abstract points. Scores are greater when you type faster and with fewer errors."
+              ><span class="Name">Score:</span>
+              <span class="IndicatorRow-gaugeValue"
+                ><span class="Value">{{ stats.score.toFixed(2) }}</span> (<span
+                  v-bind:class="stats.scoreChange < 0 ? 'text-danger' : 'text-success'"
+                  title="Difference from the average value. Positive values are better."
+                  >{{ (stats.scoreChange < 0) ? '↓' + stats.scoreChange.toFixed(2) : '↑+' + stats.scoreChange.toFixed(2) }}</span
+                >)</span
+              ></span
+            >
+          </div>
+          <div
+            class="IndicatorRow IndicatorRow-keySet border-bottom mb-1"
+            title="The current key set, in order of decreasing letter frequency."
+          >
+            <span class="Name IndicatorRow-name mr-4">Lesson's key set:</span>
+            <span class="KeySet IndicatorRow-value Practice-keySet">
+              <span
+                v-for="(key, index) in keySet"
+                :class="'LessonKey LessonKey-Accuracy-' + parseInt(key.accuracy)"
+                :title="'Character ' + key.keyValue + ' Accuracy: ' + key.accuracy.toFixed(2)"
+                >{{ key.keyValue }}</span
+              >
+            </span>
+          </div>
+          <div class="IndicatorRow IndicatorRow-currentKey border-bottom mb-1" title="The current key details.">
+            <span class="Name IndicatorRow-name mr-4">Current key:</span>
+
+            <span v-for="(key, index) in currentKeySet" class="CurrentKey CurrentKey--key IndicatorRow-value Practice-currentKey mr-2">
+              <span :class="'LessonKey LessonKey-Accuracy-' + parseInt(key.accuracy)">{{ key.keyValue }}</span>
+              <span class="KeyDetails">{{ (key.accuracy < 0) ? 'Not calibrated' : 'Accurary: ' + key.accuracy.toFixed(2) }}</span>
+              <span v-if="key.accuracy >= 0"
+                >(<span v-bind:class="key.accuracyChange < 0 ? 'text-danger' : 'text-success'"
+                  >{{ (key.accuracyChange < 0) ? '↓' + key.accuracyChange.toFixed(2) : '↑+' + key.accuracyChange.toFixed(2) }}</span
+                >)</span
+              >
+            </span>
+          </div>
+        </div>
+
+        <div class="Practice-textInput Practice-textInput--normalLayout mt-4">
+          <div class="TextInput TextInput--sizeX0">
+            <div style="position: absolute; top: 0px; left: 0px; width: 0em; height: 1em; overflow: hidden">
+              <input
+                type="text"
+                style="
+                  display: block;
+                  margin: 0px;
+                  padding: 0px;
+                  width: 1em;
+                  height: 1em;
+                  font-size: 1em;
+                  line-height: 1em;
+                  border: none;
+                  outline: none;
+                "
+              />
+            </div>
+            <div class="TextInput-fragment">
+              <span
+                v-for="(key, index) in textFragment"
+                class="TextInput-item"
+                v-bind:class="{ 'TextInput-item--special': key.keyValue == '␣', 'TextInput-item--cursor': key.isCurrent, 'text-danger': key.madeError }"
+                >{{ key.keyValue }}</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
